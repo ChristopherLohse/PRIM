@@ -1,0 +1,13 @@
+series,sweep,n,mean,lo,hi
+confounder,int,1,0.735,0.6797500000000001,0.7802499999999998
+confounder,int,2,0.795,0.745,0.84
+confounder,int,5,0.87,0.83,0.905
+confounder,int,10,0.905,0.87,0.935
+confounder,int,20,0.935,0.905,0.965
+confounder,int,50,0.97,0.95,0.99
+mediator,int,1,0.77,0.72,0.82
+mediator,int,2,0.825,0.78,0.8652499999999997
+mediator,int,5,0.97,0.95,0.99
+mediator,int,10,1.0,1.0,1.0
+mediator,int,20,1.0,1.0,1.0
+mediator,int,50,1.0,1.0,1.0

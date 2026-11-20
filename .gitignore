@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Tool caches / OS / editor
+.ruff_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# External repos (clone separately, see README)
+petshop-root-cause-analysis-main/
+causRCA-main/
+RCAEval-main/
+CausalStructureNeuralProcess-main/
+
+# Run outputs written to the project root
+# Training/finetuning checkpoints (Finalmodels/*.pt stays tracked)
+/*.pt
+logs/
+demo_anomaly_logs/
+demo_anomaly_logs_old/

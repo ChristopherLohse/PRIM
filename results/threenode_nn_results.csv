@@ -1,0 +1,11 @@
+series,sweep,n,mean,lo,hi
+confounder,obs,20,0.915,0.885,0.95
+confounder,obs,50,0.875,0.83475,0.91
+confounder,obs,100,0.9,0.87,0.935
+confounder,obs,200,0.905,0.87475,0.935
+confounder,obs,300,0.9,0.85975,0.93
+mediator,obs,20,0.965,0.94,0.985
+mediator,obs,50,0.985,0.97,0.9952499999999997
+mediator,obs,100,0.99,0.98,1.0
+mediator,obs,200,0.995,0.985,1.0
+mediator,obs,300,0.99,0.98,1.0

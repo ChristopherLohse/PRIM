@@ -1,0 +1,19 @@
+{
+    "layers": [
+        {"units": 16, "activation": "random"},
+        {"units": 8, "activation": "random"},
+        {"units": 1, "activation": "none"}
+    ],
+    "possible_activations": ["sigmoid", "tanh", "relu"],
+    "weight_init": {
+        "method": "uniform",
+        "low": -1.0,
+        "high": 1.0
+    },
+    "bias_init": {
+        "method": "uniform",
+        "low": -0.5,
+        "high": 0.5
+    },
+    "noise_input_dim": 1
+}

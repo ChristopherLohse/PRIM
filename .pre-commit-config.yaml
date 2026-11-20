@@ -1,0 +1,44 @@
+# Pre-commit configuration for PRIM
+# -------------------------------------
+# Linting: Ruff
+# Formatting: YAPF
+# Security: Bandit (skips warnings that are safe for this research code)
+# Commit messages: Commitizen
+#
+# Install: uv tool install pre-commit && pre-commit install --hook-type pre-commit --hook-type commit-msg
+
+repos:
+  # 1️⃣ Ruff: fast linting + import sorting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.1
+    hooks:
+      - id: ruff-check
+        args:
+          - --fix # auto-fix issues when possible
+        files: "\\.py$" # Python files only (skip notebooks)
+
+  # 2️⃣ YAPF: code formatting
+  - repo: https://github.com/google/yapf.git
+    rev: v0.43.0
+    hooks:
+      - id: yapf
+        additional_dependencies: [toml]
+        files: "\\.py$"
+
+  # 3️⃣ Bandit: security scanning of the prim package
+  #   B311: `random` used for synthetic data / training sampling, not crypto
+  #   B614: torch.load only on our own checkpoints (--resume, Finalmodels/)
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.6
+    hooks:
+      - id: bandit
+        entry: bandit -r prim/ --skip=B311,B614 --exit-zero
+        pass_filenames: false # scan the package, not just staged files
+        types: [python]
+
+  # 4️⃣ Commitizen: commit message validation
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.9.1
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]
